@@ -66,3 +66,39 @@ let employee: types = {id:123, name:"name", age:25, retire: (date: Date) => {con
 // employee.id = 456
 
 console.log(employee.retire)
+
+//*!                   Union Types                */ 
+
+
+function kgToLbs(weight: number | string): number {
+
+    //weight. as this will only let us using the methods which are common to string and number
+    // * so we use "Narrowing"
+    
+    if (typeof weight == "number")
+        return weight * 2.2;
+
+    else{
+        return parseInt(weight) * 2.2;
+    }
+}
+
+kgToLbs(10)
+kgToLbs("10kg")
+
+//*!                   Intersection Types                */ 
+
+type Draggable = {
+    drag: () => void
+}
+
+type Resizable = {
+    resize: () => void
+}
+
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+   drag: () => {},
+   resize: () => {}
+}
