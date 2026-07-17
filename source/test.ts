@@ -40,4 +40,29 @@ const enum Size { Small = 1, Medium = 2, Large = 3 };
 let mySize: Size = Size.Medium;                                                      
 
 console.log(mySize);
-                          
+                     
+
+//*!                   Function                */ 
+
+function newFunction(income: number, taxYear = 2022): number{
+    if (taxYear < 2022)
+        return income * 1.2;
+    return income * 1.3;
+}
+
+newFunction(10_000);
+newFunction(10_000, 2023);
+
+//*!                   Object                */ 
+
+type types = { // type alias 
+    readonly id: number, //* this will not let anyone change the vlaue of id 
+    name: string,
+    age?: number  //*/ this means the age be there or not 
+    retire: (date: Date) => void
+}
+
+let employee: types = {id:123, name:"name", age:25, retire: (date: Date) => {console.log(date)}}
+// employee.id = 456
+
+console.log(employee.retire)
