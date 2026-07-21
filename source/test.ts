@@ -138,3 +138,15 @@ greet(undefined)
 
 
 #####this is a new day and i am pushing something very random just to maitain the streak 
+
+
+//*!                   Nullable Types                */ 
+
+function greet (name: string | null | undefined) {
+    if (name === "string")
+        console.log(name.toUpperCase());
+    else 
+        console.log('Hola!')
+}
+
+greet(undefined)
