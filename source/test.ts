@@ -173,3 +173,10 @@ let textBox: UIWidget = {
 
 
 #####this is a new day and i am pushing something very random just to maitain the streak 
+
+df.filter(col("Item_Type") == "Soft Drinks" & col("Item_Weight") > 10)
+
+It raises a TypeError or unexpected evaluation error.
+
+Explanation: In Python, the bitwise & operator has higher operator precedence than the comparison == operator. Python evaluates ("Soft Drinks" & col("Item_Weight")) first, which is invalid. You must wrap each side of the comparison in parentheses:
+((col("Item_Type") == "Soft Drinks") & (col("Item_Weight") > 10)).
