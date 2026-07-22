@@ -180,3 +180,5 @@ It raises a TypeError or unexpected evaluation error.
 
 Explanation: In Python, the bitwise & operator has higher operator precedence than the comparison == operator. Python evaluates ("Soft Drinks" & col("Item_Weight")) first, which is invalid. You must wrap each side of the comparison in parentheses:
 ((col("Item_Type") == "Soft Drinks") & (col("Item_Weight") > 10)).
+
+Explanation: Instead of chaining multiple | conditions, .isin(*cols) tests whether a column's value matches any value in a list or sequence
